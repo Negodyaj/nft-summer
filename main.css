@@ -42,6 +42,13 @@ a {
   fill: red;
 }
 
+.icon-btn {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  display: flex;
+}
+
 header {
   padding: 20px 50px;
   display: flex;
@@ -62,8 +69,47 @@ nav .nav-link + .nav-link {
   margin-left: 20px;
 }
 
+@media (min-width: 851px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+@media (max-width: 850px) {
+  .desktop-only {
+    display: none !important;
+  }
+  body {
+    padding-top: 54px;
+  }
+  header {
+    padding: 15px 30px;
+  }
+  header .logo {
+    height: 24px;
+  }
+  nav {
+    position: absolute;
+    background-color: #3B3B3B;
+    padding: 20px 30px;
+    flex-direction: column;
+    top: 54px;
+    right: -220px;
+    width: 220px;
+    transition: all 0.4s ease;
+  }
+  nav.visible {
+    right: 0;
+  }
+  nav .nav-link + .nav-link {
+    margin-left: 0;
+  }
+  .container {
+    padding: 40px 30px;
+  }
+}
 #hero-section {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 30px;
 }
 #hero-section h1 {
@@ -74,7 +120,6 @@ nav .nav-link + .nav-link {
 }
 #hero-section p {
   margin-top: 20px;
-  margin-bottom: 30px;
   font-size: 22px;
   line-height: 160%;
   text-transform: capitalize;
@@ -105,6 +150,8 @@ nav .nav-link + .nav-link {
 #hero-section .hero-card {
   display: flex;
   flex-direction: column;
+  grid-column: 2/3;
+  grid-row: 1/3;
 }
 #hero-section .hero-card > img {
   width: 510px;
@@ -149,4 +196,44 @@ nav .nav-link + .nav-link {
   left: 50%;
   top: 50%;
   transform: translate3d(-50%, -50%, 0);
+}
+
+@media (max-width: 850px) {
+  #hero-section {
+    grid-template-columns: 1fr;
+  }
+  #hero-section h1 {
+    font-size: 28px;
+    line-height: 140%;
+  }
+  #hero-section p {
+    font-size: 16px;
+    line-height: 140%;
+    margin: 10px 0 0 0;
+  }
+  #hero-section .hero-card {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  #hero-section .hero-card > img {
+    width: 100%;
+  }
+  #hero-section .statistics-item {
+    width: 85px;
+  }
+  #hero-section .top-part {
+    font-size: 22px;
+    line-height: 160%;
+  }
+  #hero-section .bottom-part {
+    font-size: 16px;
+    line-height: 140%;
+  }
+  #hero-section .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
 }/*# sourceMappingURL=main.css.map */

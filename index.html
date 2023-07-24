@@ -14,7 +14,7 @@
   </head>
   <body>
     <header>
-      <img src="./assets/logo.png" alt="NFT Marketplace logo" />
+      <img src="./assets/logo.png" class="logo" alt="NFT Marketplace logo" />
       <nav>
         <a href="#" class="nav-link">Marketplace</a>
         <a href="#" class="nav-link">Rankings</a>
@@ -43,14 +43,17 @@
           Sign Up
         </a>
       </nav>
+      <button class="icon-btn mobile-only" onclick="toggleNavVisibility()"><img src="./assets/icons/BurgerMenu.svg"></button>
     </header>
     <section id="hero-section" class="container">
-      <div class="left-part">
+      <div class="left-top-part">
         <h1>Discover digital art & Collect NFTs</h1>
         <p>
           NFT marketplace UI created with Anima for Figma. Collect, buy and sell
           art from more than 20k NFT artists.
         </p>
+      </div>
+      <div class="left-bottom-part">
         <a href="#" class="btn fill">
           <img src="./assets/RocketLaunch.svg" />
           Get Started
@@ -144,5 +147,6 @@
       </div>
     </section>
     <footer class="container">footer will be here</footer>
+    <script src="./main.js"></script>
   </body>
 </html>
