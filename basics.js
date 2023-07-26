@@ -44,21 +44,106 @@ const value4 = '15';
 const compareResult = value1 === value4;
 console.log("🚀 ~ file: basics.js:44 ~ compareResult:", compareResult);
 
-const valueFromUser = prompt('please enter a number from 1 to 10');  // '5'
-const numberFromUser = parseInt(valueFromUser);  // 5
-console.log("🚀 ~ file: basics.js:55 ~ numberFromUser:", numberFromUser)
-const oneMoreValueFromUser = +prompt('please enter a number from 1 to 10');
-console.log("🚀 ~ file: basics.js:56 ~ oneMoreValueFromUser:", oneMoreValueFromUser);
+const phrase = `He told me: "I don't like winter"`;
 
-if (numberFromUser > oneMoreValueFromUser) {
-  console.log('value1 is greater than value2');
-} else {
-  console.log('value1 is less than value2');
+const valueFromUser = 42;
+//const valueFromUser = +prompt('please enter a number from 1 to 10');  // '5'
+
+if (valueFromUser === 1) {
+  console.log('one');
 }
 
+if (valueFromUser === 2) {
+  console.log('two');
+}
+
+if (valueFromUser === 3) {
+  console.log('three');
+}
+
+if (valueFromUser > 3) {
+  console.log("we don't know this number");
+}
+
+// version 2
+
+if (valueFromUser === 1) {
+  console.log('one');
+} else if (valueFromUser === 2) {
+  console.log('two');
+} else if (valueFromUser === 3) {
+  console.log('three');
+} else if (valueFromUser === 4 || valueFromUser === 5 || valueFromUser === 6) {
+  console.log('please try another number');
+} else {
+  console.log("we don't know this number");
+}
+
+// version 3
+
+switch (valueFromUser) {
+  case 1:
+    console.log('one');
+    break;
+  case 2:
+    console.log('two');
+    break;
+  case 3:
+    console.log('three');
+    break;
+  case 4:
+  case 5:
+  case 6:
+    console.log('please try another number');
+    break;
+  default:
+    console.log("we don't know this number");
+    break;
+  }
+
+let isInEditMode = true; // it might be true also
+let isRoadStopInRoad = true;
+let roadDirection = 4;
+const circleRoadDirection = 4;
+let isSelectedRoadStopEqualsToFirstRoadStopInRoad = true;
+
+console.log((isInEditMode) && (!isRoadStopInRoad || (roadDirection === circleRoadDirection && isSelectedRoadStopEqualsToFirstRoadStopInRoad)));
+
+// ALT + SHIFT + F
 
 
 // functions
+
+function sumTwoNumbers() {
+  const result = getNumberFromUser('please enter a number from 1 to 10') + getNumberFromUser('please enter a number from -5 to 5');
+  return result;
+}
+
+function getNumberFromUser(message) {
+  let convertedValue;
+  do {
+    const valueFromUser = prompt(message);
+    convertedValue = parseInt(valueFromUser);
+  }
+  while (isNaN(convertedValue))
+   
+  return convertedValue;
+}
+
+console.log(sumTwoNumbers());
+
 // loops
+
+let counter = 10;
+
+console.log('before the loop');
+
+while (counter < 10) {
+  console.log(counter + 1);
+  counter++;
+}
+
+console.log('after the loop');
+
 // arrays
 // objects
