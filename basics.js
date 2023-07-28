@@ -146,4 +146,93 @@ while (counter < 10) {
 console.log('after the loop');
 
 // arrays
+
+const a1 = 1;
+const a2 = 3;
+const a3 = 5;
+const a4 = 7;
+const a5 = 9;
+const a6 = 11;
+const a7 = 13;
+const a8 = 15;
+const a9 = 17;
+const a10 = 19;
+
+const testArray = [1];
+let currentIndex = 1;
+
+while (currentIndex < 79) {
+  testArray[currentIndex] = testArray[currentIndex - 1] + 2;
+  currentIndex++;
+}
+
+console.log(testArray);
+console.log(testArray.length);
+
+const array = [];
+array[0] = -1;
+array[1] = -3;
+array[2] = -5;
+array[3] = -7;
+array[4] = -9;
+array[5] = -11;
+array[6] = -13;
+array[7] = -15;
+array[8] = -17;
+array[9] = -19;
+
+for (let index = 0; index < testArray.length; index = index + 2) {
+  const item = testArray[index];
+  console.log(item);
+}
+
+for (let item of array) {
+  console.log(item * 5);
+}
+
 // objects
+
+const cat = {
+  name: 'Richard',
+  color: 'beige',
+  age: 11,
+  legsCount: 4,
+  canSwim: true,
+  favoriteFood: ['tuna', 'meat', 'shrimps'],
+};
+
+const cat2 = {
+  name: 'Renley',
+  color: 'grey',
+  age: 5,
+  legsCount: 4,
+  canSwim: false,
+  favoriteFood: ['chicken', 'tuna', 'shrimps'],
+};
+
+const teacher = {
+  name: 'Antoshka',
+  color: 'not so dark',
+  age: 35,
+  legsCount: 2,
+  canSwim: true,
+  favoriteFood: ['pizza', 'meat'],
+}
+
+const oneMoreArray = [cat, cat2, teacher];
+console.log(oneMoreArray);
+
+const filteredItems = oneMoreArray.filter(item => item.canSwim && item.legsCount > 2);
+console.log(filteredItems);
+const filteredItems2 = oneMoreArray.filter(item => item.age > 10);
+console.log(filteredItems2);
+const filteredItems3 = oneMoreArray.filter(item => item.favoriteFood.indexOf('tuna') > -1 || item.legsCount === 2);
+console.log(filteredItems3);
+
+console.log(cat['favoriteFood']);
+console.log(cat.favoriteFood);
+
+for (const key in teacher) {
+  console.log(key);
+  console.log(teacher[key]);
+}
