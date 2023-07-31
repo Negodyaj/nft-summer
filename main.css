@@ -173,9 +173,32 @@ nav .nav-link + .nav-link {
   gap: 12px;
 }
 
+.carousel-wrapper {
+  position: relative;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  margin-top: -20px;
+  z-index: 1;
+  cursor: pointer;
+  border: none;
+}
+.carousel-btn.left {
+  left: -10px;
+}
+.carousel-btn.right {
+  right: -10px;
+}
+.carousel-btn.disabled {
+  background-color: rgba(128, 128, 128, 0.309);
+  cursor: default;
+}
+
 .categories-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  display: flex;
+  overflow: hidden;
   gap: 30px;
 }
 .categories-grid .top-part {
@@ -196,6 +219,9 @@ nav .nav-link + .nav-link {
   left: 50%;
   top: 50%;
   transform: translate3d(-50%, -50%, 0);
+}
+.categories-grid .category-card:first-child {
+  transition: all 0.4s ease;
 }
 
 @media (max-width: 850px) {
